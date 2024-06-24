@@ -1,0 +1,155 @@
+{
+    "workbench.colorTheme": "One Dark Pro Italic Vivid",
+    "editor.fontFamily": "JetBrain Mono",
+    // boring settings
+    "python.venvPath": "./",
+    "files.autoSave": "afterDelay",
+    // who the hell wants a minimap of their code??? jfc
+    "editor.minimap.enabled": false,
+    // i code python on hard mode 
+    "python.analysis.typeCheckingMode": "strict",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.profiles.windows": {
+        "Git Bash": {
+            "path": [
+                "C:\\Program Files\\Git\\bin\\bash.exe"
+            ],
+            "source": "Git Bash"
+        }
+    },
+    // using non-default test explorer so I don't want it to open when running tests
+    "python.testing.pytestEnabled": true,
+    "testing.openTesting": "neverOpen",
+    // the amount of times I've battled autoclosing brackets made me question it's
+    // usefulness. be gone.
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoSurround": "never",
+    // vim config
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.easymotion": true,
+    "vim.hlsearch": true,
+    "vim.highlightedyank.enable": true,
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-p>": true,
+        "<C-n>": true,
+    },
+    "vim.normalModeKeyBindings": [
+        // navigate left and right between buffers WITHIN a pane
+        {
+            "before": [
+                "<S-h>"
+            ],
+            "commands": [
+                ":bprevious"
+            ]
+        },
+        {
+            "before": [
+                "<S-l>"
+            ],
+            "commands": [
+                ":bnext"
+            ]
+        },
+        // failed experiment with changing <up> and <down> to C-n and C-p for dropdown nav
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "after": [
+                "<down>"
+            ]
+        },
+        {
+            "before": [
+                "<C-p>"
+            ],
+            "after": [
+                "<up>"
+            ]
+        },
+        // TDD shortcuts, super cool
+        {
+            "before": [
+                "<leader>",
+                "t",
+                "c"
+            ],
+            "commands": [
+                "test-explorer.run-test-at-cursor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t",
+                "m"
+            ],
+            "commands": [
+                "test-explorer.run-file"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t",
+                "a"
+            ],
+            "commands": [
+                "test-explorer.run-all"
+            ]
+        }
+    ],
+    // make VS Code Vim run "blazingly" fast (just not slow)
+    "extensions.experimental.affinity": {
+        "vscode.vim": 1
+    },
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "editor.semanticHighlighting.enabled": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "name": "One Dark italic",
+                "scope": [
+                    "comment",
+                    "entity.other.attribute-name",
+                    "keyword",
+                    "markup.underline.link",
+                    "storage.modifier",
+                    "storage.type",
+                    "string.url",
+                    "variable.language.super",
+                    "variable.language.this"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "name": "One Dark italic reset",
+                "scope": [
+                    "keyword.operator",
+                    "keyword.other.type",
+                    "storage.modifier.import",
+                    "storage.modifier.package",
+                    "storage.type.built-in",
+                    "storage.type.function.arrow",
+                    "storage.type.generic",
+                    "storage.type.java",
+                    "storage.type.primitive"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    }
+}

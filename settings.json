@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "One Dark Pro Italic Vivid",
     "editor.fontFamily": "JetBrain Mono",
     // boring settings
     "python.venvPath": "./",
@@ -20,12 +19,17 @@
     // using non-default test explorer so I don't want it to open when running tests
     "python.testing.pytestEnabled": true,
     "testing.openTesting": "neverOpen",
+    "testExplorer.showOnRun": false,
+    "testExplorer.errorDecoration": true,
+    "testExplorer.errorDecorationHover": true,
     // the amount of times I've battled autoclosing brackets made me question it's
     // usefulness. be gone.
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
+    "editor.cursorSurroundingLines": 8,
     // vim config
+    // requires https://marketplace.visualstudio.com/items?itemName=vscodevim.vim
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.easymotion": true,
@@ -72,6 +76,7 @@
             ]
         },
         // TDD shortcuts, super cool
+        // requires  l://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer 
         {
             "before": [
                 "<leader>",
@@ -101,6 +106,25 @@
             "commands": [
                 "test-explorer.run-all"
             ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t",
+                "d"
+            ],
+            "commands": [
+                "test-explorer.debug-test-at-cursor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [
+                "editor.debug.action.toggleBreakpoint"
+            ],
         }
     ],
     // make VS Code Vim run "blazingly" fast (just not slow)
@@ -151,5 +175,18 @@
                 }
             }
         ]
-    }
+    },
+    "explorer.autoRevealExclude": {
+        "**/__pycache__": true
+    },
+    "search.exclude": {
+        "**/__pycache__": true
+    },
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.idea": true,
+        "**/.pytest_cache": true
+    },
+    "workbench.iconTheme": "atom-icons",
+    "workbench.colorTheme": "One Dark Pro Italic Vivid"
 }
